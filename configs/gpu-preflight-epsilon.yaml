@@ -1,0 +1,10 @@
+extends: gpu-preflight.yaml
+name: hemera-gpu-epsilon-real-data-preflight
+objective:
+  name: epsilon
+  train_timesteps: 1000
+  min_snr_gamma: 5.0
+train:
+  output_dir: preflight/gpu-epsilon-overfit
+  steps: 100
+  save_every: 100

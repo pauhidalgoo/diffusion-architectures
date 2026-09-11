@@ -1,0 +1,19 @@
+extends: ../experiment-base.yaml
+name: representation-dc-clip
+data:
+  cache_dir: data/representation-cache/dc-clip
+  max_items: 20000
+  latent_channels: 32
+  latent_size: 8
+representation:
+  vae_id: dc-ai/dc-ae-lite-f32c32-diffusers
+  vae_type: dc
+  precompute_repa: false
+model:
+  in_channels: 32
+  patch_size: 1
+train:
+  output_dir: runs/exploratory/representations/dc-clip
+  steps: 1000000
+budget:
+  max_eur: 0.10

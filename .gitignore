@@ -1,0 +1,51 @@
+# Python bytecode, test state, and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Editors and operating-system metadata
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+
+# Local experiment state, caches, downloads, and generated samples
+/artifacts/
+/data/
+/runs/
+/samples/
+/preflight/
+/wandb/
+/.cache/
+/.huggingface/
+/.hemera-*-start
+
+# Runtime reports are large/noisy. Keep only the curated publication evidence.
+/reports/*
+!/reports/EXPLORATORY_SUMMARY.md
+!/reports/DECISION_SPRINT_SUMMARY.md
+!/reports/final/
+!/reports/final/**
+
+# Checkpoints are local unless explicitly promoted into model/hemera-nano.
+*.pt
+*.ckpt
+*.safetensors
+!/model/hemera-nano/model.safetensors
+*.parquet
+
+# Temporary release/upload staging
+/.release/
+/dist/
+/build/
+*.egg-info/

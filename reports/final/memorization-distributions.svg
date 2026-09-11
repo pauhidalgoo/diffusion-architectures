@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#172033}.title{font-size:24px;font-weight:700}.panel{font-size:16px;font-weight:650}.axis{font-size:12px;fill:#526078}.legend{font-size:12px}.grid{stroke:#e4e9f0;stroke-width:1}.axisline{stroke:#8994a6;stroke-width:1}</style>
+<text x="50" y="38" class="title">Nearest-neighbor diagnostics (diagnostic, not proof of copying)</text>
+<line x1="100" y1="92.00" x2="1120" y2="92.00" class="grid"/>
+<text x="90" y="96.00" text-anchor="end" class="axis">1.08</text>
+<line x1="100" y1="134.50" x2="1120" y2="134.50" class="grid"/>
+<text x="90" y="138.50" text-anchor="end" class="axis">0.79</text>
+<line x1="100" y1="177.00" x2="1120" y2="177.00" class="grid"/>
+<text x="90" y="181.00" text-anchor="end" class="axis">0.5</text>
+<line x1="100" y1="219.50" x2="1120" y2="219.50" class="grid"/>
+<text x="90" y="223.50" text-anchor="end" class="axis">0.21</text>
+<line x1="100" y1="262.00" x2="1120" y2="262.00" class="grid"/>
+<text x="90" y="266.00" text-anchor="end" class="axis">-0.08</text>
+<line x1="100" y1="262" x2="1120" y2="262" class="axisline"/>
+<text x="100" y="78" class="panel">CLIP nearest-neighbor cosine distribution</text>
+<text x="100" y="284" class="axis">1</text>
+<text x="1120" y="284" text-anchor="end" class="axis">1</text>
+<polyline fill="none" stroke="#2563eb" stroke-width="2.2" points="100.00,249.90 135.17,250.28 170.34,249.90 205.52,250.28 240.69,249.15 275.86,248.78 311.03,248.41 346.21,246.91 381.38,243.17 416.55,234.57 451.72,230.46 486.90,219.62 522.07,202.80 557.24,187.09 592.41,164.66 627.59,137.37 662.76,105.97 697.93,103.72 733.10,105.97 768.28,110.08 803.45,117.56 838.62,134.38 873.79,147.84 908.97,165.41 944.14,191.58 979.31,206.16 1014.48,220.74 1049.66,232.70 1084.83,239.81 1120.00,246.54"/>
+<line x1="100" y1="306" x2="122" y2="306" stroke="#2563eb" stroke-width="3"/>
+<text x="129" y="310" class="legend">clip</text>
+<line x1="100" y1="362.00" x2="1120" y2="362.00" class="grid"/>
+<text x="90" y="366.00" text-anchor="end" class="axis">1.079</text>
+<line x1="100" y1="404.50" x2="1120" y2="404.50" class="grid"/>
+<text x="90" y="408.50" text-anchor="end" class="axis">0.7915</text>
+<line x1="100" y1="447.00" x2="1120" y2="447.00" class="grid"/>
+<text x="90" y="451.00" text-anchor="end" class="axis">0.5035</text>
+<line x1="100" y1="489.50" x2="1120" y2="489.50" class="grid"/>
+<text x="90" y="493.50" text-anchor="end" class="axis">0.2155</text>
+<line x1="100" y1="532.00" x2="1120" y2="532.00" class="grid"/>
+<text x="90" y="536.00" text-anchor="end" class="axis">-0.07253</text>
+<line x1="100" y1="532" x2="1120" y2="532" class="axisline"/>
+<text x="100" y="348" class="panel">DINOV2 nearest-neighbor cosine distribution</text>
+<text x="100" y="554" class="axis">0</text>
+<text x="1120" y="554" text-anchor="end" class="axis">1</text>
+<polyline fill="none" stroke="#2563eb" stroke-width="2.2" points="100.00,517.72 135.17,514.66 170.34,507.00 205.52,504.96 240.69,490.66 275.86,482.49 311.03,467.17 346.21,446.23 381.38,448.79 416.55,422.23 451.72,402.83 486.90,388.53 522.07,388.02 557.24,373.72 592.41,397.21 627.59,375.26 662.76,390.58 697.93,404.87 733.10,409.47 768.28,417.64 803.45,424.28 838.62,428.87 873.79,453.89 908.97,449.30 944.14,462.57 979.31,485.04 1014.48,497.81 1049.66,512.62 1084.83,514.66 1120.00,520.28"/>
+<line x1="100" y1="576" x2="122" y2="576" stroke="#2563eb" stroke-width="3"/>
+<text x="129" y="580" class="legend">dinov2</text>
+</svg>

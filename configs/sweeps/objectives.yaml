@@ -1,0 +1,19 @@
+base: ../experiment-base.yaml
+output_dir: runs/exploratory/objectives
+max_eur: 0.5
+runs:
+  - name: epsilon-min-snr
+    overrides:
+      objective:
+        name: epsilon
+        min_snr_gamma: 5.0
+  - name: v-prediction
+    overrides:
+      objective:
+        name: v
+  - name: rectified-flow
+    overrides:
+      objective:
+        name: flow
+        flow_logit_mean: 0.0
+        flow_logit_std: 1.0

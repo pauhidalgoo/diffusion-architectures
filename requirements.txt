@@ -1,0 +1,21 @@
+# Local core
+torch>=2.5
+PyYAML>=6.0
+numpy>=1.26
+Pillow>=10.0
+
+# Cloud data and pretrained components
+accelerate>=1.0,<2
+datasets>=3.0,<5
+pyarrow>=17.0,<26
+diffusers>=0.32,<0.39
+transformers>=4.46,<5
+safetensors>=0.4,<1
+huggingface-hub>=0.27,<1
+
+# Evaluation and testing
+torchmetrics>=1.6,<2
+torch-fidelity>=0.3,<1
+scipy>=1.13,<2
+clint>=0.5,<1
+pytest>=8.0,<10

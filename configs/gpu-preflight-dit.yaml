@@ -1,0 +1,20 @@
+extends: gpu-preflight.yaml
+name: hemera-standard-dit-gpu-preflight
+model:
+  backbone: dit
+  hidden_size: 360
+  conditioning: pooled
+train:
+  output_dir: preflight/gpu-standard-dit-overfit
+  seed: 31418
+  steps: 100
+  batch_size: 128
+  effective_batch_size: 256
+  compile: false
+  ema_half_life_images: 4096
+  log_every: 10
+  save_every: 100
+budget:
+  max_eur: 0.05
+  hourly_eur: 0.348576158
+  reserve_minutes: 2

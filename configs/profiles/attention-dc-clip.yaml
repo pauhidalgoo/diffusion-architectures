@@ -1,0 +1,9 @@
+extends: ../representations/dc-clip.yaml
+name: attention-gate-dc-clip
+train:
+  batch_size: 64
+  effective_batch_size: 64
+  output_dir: runs/profiles/attention-dc-clip
+eval:
+  samples: 64
+  batch_size: 16

@@ -1,0 +1,9 @@
+extends: gpu-preflight.yaml
+name: hemera-gpu-evaluation-preflight
+data:
+  cache_dir: preflight-eval/cache
+eval:
+  samples: 8
+  batch_size: 4
+  num_inference_steps: 5
+  guidance_scale: 2.0

@@ -1,0 +1,6 @@
+extends: experiment-base.yaml
+name: hemera-photonyx-full-audit
+data:
+  # Audit every row. Exploratory representation caches deliberately select a
+  # stratified subset from this immutable full manifest.
+  max_items: null

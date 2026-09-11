@@ -1,0 +1,13 @@
+extends: gpu-preflight.yaml
+name: hemera-gpu-throughput-preflight
+train:
+  output_dir: preflight/gpu-throughput
+  seed: 31415
+  steps: 100
+  batch_size: 128
+  effective_batch_size: 256
+  compile: true
+  ema_half_life_images: 4096
+  log_every: 10
+  sample_every: 0
+  save_every: 100

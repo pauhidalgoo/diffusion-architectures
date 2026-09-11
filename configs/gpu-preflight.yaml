@@ -1,0 +1,30 @@
+extends: experiment-base.yaml
+name: hemera-gpu-real-data-preflight
+data:
+  cache_dir: preflight/cache
+  source_temperature: 1.0
+train:
+  output_dir: preflight/gpu-overfit
+  seed: 31415
+  steps: 200
+  batch_size: 4
+  effective_batch_size: 4
+  learning_rate: 0.0005
+  warmup_ratio: 0.05
+  precision: bfloat16
+  compile: false
+  ema_half_life_images: 256
+  log_every: 5
+  sample_every: 0
+  save_every: 50
+  device: cuda
+  dataset_mode: shards
+budget:
+  max_eur: 0.10
+  hourly_eur: 0.3850243637956702
+  reserve_minutes: 2
+eval:
+  samples: 7
+  batch_size: 4
+  num_inference_steps: 15
+  guidance_scale: 3.0

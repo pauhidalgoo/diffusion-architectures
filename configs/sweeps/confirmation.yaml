@@ -1,0 +1,190 @@
+base: ../experiment-base.yaml
+output_dir: runs/confirmatory
+max_eur: 0.36
+runs:
+- name: finalist-a-seed-101
+  overrides:
+    model:
+      backbone: dit
+      in_channels: 32
+      hidden_size: 360
+      depth: 12
+      heads: 8
+      patch_size: 1
+      mlp_ratio: 4.0
+      text_dim: 512
+      text_length: 77
+      dropout: 0.0
+      conditioning: pooled
+      ffn: swiglu
+      attention: full
+      efficiency: dense
+      mask_ratio: 0.5
+      mask_finish_ratio: 0.1
+      window_size: 8
+      num_experts: 4
+      repa_dim: 384
+      max_parameters: 50000000
+    objective:
+      name: flow
+      train_timesteps: 1000
+      min_snr_gamma: 5.0
+      flow_logit_mean: 0.0
+      flow_logit_std: 1.0
+    train:
+      seed: 101
+- name: finalist-a-seed-202
+  overrides:
+    model:
+      backbone: dit
+      in_channels: 32
+      hidden_size: 360
+      depth: 12
+      heads: 8
+      patch_size: 1
+      mlp_ratio: 4.0
+      text_dim: 512
+      text_length: 77
+      dropout: 0.0
+      conditioning: pooled
+      ffn: swiglu
+      attention: full
+      efficiency: dense
+      mask_ratio: 0.5
+      mask_finish_ratio: 0.1
+      window_size: 8
+      num_experts: 4
+      repa_dim: 384
+      max_parameters: 50000000
+    objective:
+      name: flow
+      train_timesteps: 1000
+      min_snr_gamma: 5.0
+      flow_logit_mean: 0.0
+      flow_logit_std: 1.0
+    train:
+      seed: 202
+- name: finalist-a-seed-303
+  overrides:
+    model:
+      backbone: dit
+      in_channels: 32
+      hidden_size: 360
+      depth: 12
+      heads: 8
+      patch_size: 1
+      mlp_ratio: 4.0
+      text_dim: 512
+      text_length: 77
+      dropout: 0.0
+      conditioning: pooled
+      ffn: swiglu
+      attention: full
+      efficiency: dense
+      mask_ratio: 0.5
+      mask_finish_ratio: 0.1
+      window_size: 8
+      num_experts: 4
+      repa_dim: 384
+      max_parameters: 50000000
+    objective:
+      name: flow
+      train_timesteps: 1000
+      min_snr_gamma: 5.0
+      flow_logit_mean: 0.0
+      flow_logit_std: 1.0
+    train:
+      seed: 303
+- name: finalist-b-seed-101
+  overrides:
+    model:
+      backbone: dit
+      in_channels: 32
+      hidden_size: 360
+      depth: 12
+      heads: 8
+      patch_size: 1
+      mlp_ratio: 4.0
+      text_dim: 512
+      text_length: 77
+      dropout: 0.0
+      conditioning: pooled
+      ffn: swiglu
+      attention: full
+      efficiency: repa
+      mask_ratio: 0.5
+      mask_finish_ratio: 0.1
+      window_size: 8
+      num_experts: 4
+      repa_dim: 384
+      max_parameters: 50000000
+    objective:
+      name: flow
+      train_timesteps: 1000
+      min_snr_gamma: 5.0
+      flow_logit_mean: 0.0
+      flow_logit_std: 1.0
+    train:
+      seed: 101
+- name: finalist-b-seed-202
+  overrides:
+    model:
+      backbone: dit
+      in_channels: 32
+      hidden_size: 360
+      depth: 12
+      heads: 8
+      patch_size: 1
+      mlp_ratio: 4.0
+      text_dim: 512
+      text_length: 77
+      dropout: 0.0
+      conditioning: pooled
+      ffn: swiglu
+      attention: full
+      efficiency: repa
+      mask_ratio: 0.5
+      mask_finish_ratio: 0.1
+      window_size: 8
+      num_experts: 4
+      repa_dim: 384
+      max_parameters: 50000000
+    objective:
+      name: flow
+      train_timesteps: 1000
+      min_snr_gamma: 5.0
+      flow_logit_mean: 0.0
+      flow_logit_std: 1.0
+    train:
+      seed: 202
+- name: finalist-b-seed-303
+  overrides:
+    model:
+      backbone: dit
+      in_channels: 32
+      hidden_size: 360
+      depth: 12
+      heads: 8
+      patch_size: 1
+      mlp_ratio: 4.0
+      text_dim: 512
+      text_length: 77
+      dropout: 0.0
+      conditioning: pooled
+      ffn: swiglu
+      attention: full
+      efficiency: repa
+      mask_ratio: 0.5
+      mask_finish_ratio: 0.1
+      window_size: 8
+      num_experts: 4
+      repa_dim: 384
+      max_parameters: 50000000
+    objective:
+      name: flow
+      train_timesteps: 1000
+      min_snr_gamma: 5.0
+      flow_logit_mean: 0.0
+      flow_logit_std: 1.0
+    train:
+      seed: 303

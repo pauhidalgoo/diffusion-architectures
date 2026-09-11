@@ -1,0 +1,17 @@
+extends: final-hemera-nano.yaml
+name: hemera-final-full-cache-preflight
+train:
+  output_dir: preflight-final/full-cache-train
+  seed: 2026
+  steps: 50
+  batch_size: 384
+  effective_batch_size: 768
+  warmup_ratio: 0.1
+  log_every: 1
+  sample_every: 0
+  save_every: 50
+budget:
+  max_eur: 0
+  hourly_eur: 0.4905
+  reserve_minutes: 0
+  save_milestones: false

@@ -1,0 +1,19 @@
+extends: ../experiment-base.yaml
+name: representation-sd-clip
+representation:
+  vae_id: stabilityai/sd-vae-ft-mse
+  vae_type: kl
+  precompute_repa: false
+data:
+  cache_dir: data/representation-cache/sd-clip
+  max_items: 20000
+  latent_channels: 4
+  latent_size: 32
+model:
+  in_channels: 4
+  patch_size: 2
+train:
+  output_dir: runs/exploratory/representations/sd-clip
+  steps: 1000000
+budget:
+  max_eur: 0.10

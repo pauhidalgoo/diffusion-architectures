@@ -1,0 +1,82 @@
+name: hemera-experiment-base
+data:
+  dataset_id: pauhidalgoo/photonyx
+  dataset_revision: 35978bff3d6f38f4e432c25506168aaf8bd7e26f
+  image_size: 256
+  cache_dir: data/cache
+  raw_cache_dir: data/raw-cache
+  manifest_dir: data/manifests
+  shard_size: 4096
+  max_items: 20000
+  latent_channels: 32
+  latent_size: 8
+  text_length: 77
+  text_dim: 512
+  source_temperature: 0.5
+representation:
+  vae_id: dc-ai/dc-ae-lite-f32c32-diffusers
+  vae_type: dc
+  text_encoder_id: openai/clip-vit-base-patch32
+  text_encoder_type: clip
+  precompute_dtype: float16
+  max_text_length: 77
+  precompute_repa: true
+model:
+  backbone: dit
+  in_channels: 32
+  hidden_size: 360
+  depth: 12
+  heads: 8
+  patch_size: 1
+  mlp_ratio: 4.0
+  text_dim: 512
+  text_length: 77
+  dropout: 0.0
+  conditioning: pooled
+  ffn: swiglu
+  attention: full
+  efficiency: dense
+  mask_ratio: 0.5
+  mask_finish_ratio: 0.1
+  window_size: 8
+  num_experts: 4
+  repa_dim: 384
+  max_parameters: 50000000
+objective:
+  name: flow
+  train_timesteps: 1000
+  min_snr_gamma: 5.0
+  flow_logit_mean: 0.0
+  flow_logit_std: 1.0
+train:
+  output_dir: runs/experiments/base
+  seed: 42
+  steps: 1000000
+  batch_size: 384
+  effective_batch_size: 768
+  learning_rate: 0.0002
+  min_learning_rate_ratio: 0.1
+  warmup_ratio: 0.02
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  precision: bfloat16
+  compile: false
+  ema_half_life_images: 100000
+  cfg_dropout: 0.1
+  log_every: 10
+  sample_every: 250
+  save_every: 250
+  device: auto
+  dataset_mode: shards
+budget:
+  max_eur: 0
+  hourly_eur: 0.348576158
+  reserve_minutes: 1
+eval:
+  samples: 512
+  batch_size: 64
+  num_inference_steps: 30
+  guidance_scale: 3.0
+  cmmd_bandwidth: 10.0

@@ -1,0 +1,16 @@
+extends: gpu-preflight.yaml
+name: hemera-token-cross-only-gpu-preflight
+train:
+  output_dir: preflight/gpu-cross-only-overfit
+  seed: 31419
+  steps: 150
+  batch_size: 128
+  effective_batch_size: 256
+  learning_rate: 0.0005
+  ema_half_life_images: 4096
+  log_every: 10
+  save_every: 150
+budget:
+  max_eur: 0.04
+  hourly_eur: 0.348576158
+  reserve_minutes: 1

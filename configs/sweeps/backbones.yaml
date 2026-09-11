@@ -1,0 +1,62 @@
+base: ../experiment-base.yaml
+output_dir: runs/exploratory/backbones
+max_eur: 0.9
+runs:
+  - name: unet
+    overrides:
+      model:
+        backbone: unet
+        hidden_size: 152
+        conditioning: cross
+      train:
+        batch_size: 768
+        effective_batch_size: 768
+        save_every: 1500
+        sample_every: 1500
+  - name: standard-dit
+    overrides:
+      model:
+        backbone: dit
+        hidden_size: 360
+        conditioning: pooled
+      train:
+        batch_size: 768
+        effective_batch_size: 768
+  - name: pixart
+    overrides:
+      model:
+        backbone: pixart
+        hidden_size: 320
+        conditioning: cross
+      train:
+        batch_size: 768
+        effective_batch_size: 768
+  - name: uvit
+    overrides:
+      model:
+        backbone: uvit
+        hidden_size: 352
+        conditioning: joint
+      train:
+        batch_size: 192
+        effective_batch_size: 768
+  - name: mmdit
+    overrides:
+      model:
+        backbone: mmdit
+        hidden_size: 312
+        conditioning: joint
+      train:
+        batch_size: 384
+        effective_batch_size: 768
+  - name: sana
+    overrides:
+      model:
+        backbone: sana
+        hidden_size: 296
+        conditioning: cross
+        attention: linear
+        ffn: mix
+      train:
+        batch_size: 256
+        effective_batch_size: 768

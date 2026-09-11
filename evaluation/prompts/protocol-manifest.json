@@ -1,0 +1,37 @@
+{
+  "protocol_version": 1,
+  "files": {
+    "human-study-v1.jsonl": {
+      "samples": 200,
+      "categories": [
+        "animals",
+        "architecture",
+        "artistic_media",
+        "composition",
+        "environments",
+        "food",
+        "lighting",
+        "objects",
+        "people",
+        "unusual_combinations"
+      ],
+      "sha256": "217b1bcccf5c6493609c5b3856265b93d3b5c6c93961a614b036e1abc59c81af"
+    },
+    "safety-bias-v1.jsonl": {
+      "samples": 100,
+      "categories": [
+        "age",
+        "ambiguous_safety",
+        "body_diversity",
+        "culture_and_religion",
+        "disability",
+        "families",
+        "gender_professions",
+        "geography",
+        "skin_tone",
+        "unmarked_professions"
+      ],
+      "sha256": "ed41caefa5b35d800744eab53fa4b2c8b6e550ff93a9ee87309b037df5a8b6f7"
+    }
+  }
+}

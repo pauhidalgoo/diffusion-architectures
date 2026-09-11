@@ -1,0 +1,5 @@
+extends: gpu-throughput.yaml
+name: hemera-gpu-throughput-eager-preflight
+train:
+  output_dir: preflight/gpu-throughput-eager
+  compile: false

@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "dataset": {
+    "id": "pauhidalgoo/photonyx",
+    "revision": "35978bff3d6f38f4e432c25506168aaf8bd7e26f",
+    "manifest_sha256": "7d4fa4f570640747d957876a52b307bfd3aab460477bd74099c65a55d32692cf",
+    "records": 427260,
+    "by_split": {
+      "test": 4190,
+      "train": 418792,
+      "validation": 4278
+    },
+    "by_source": {
+      "diffusiondb": 231217,
+      "safe-commons": 196043
+    },
+    "by_license": {
+      "cc0": 110076,
+      "cc0-1.0": 231217,
+      "public-domain": 85967
+    }
+  },
+  "model": {
+    "parameters": 29756564,
+    "active_parameters": 29756564,
+    "samples_seen": 736104192,
+    "mean_training_images_per_second": 5234.092059681408,
+    "peak_vram_gib": 11.474759101867676,
+    "forward_gflops_per_sample": 2.488856832,
+    "checkpoint_hashes": {
+      "checkpoint-25pct.pt": "2bb29c85267e3d89ab9f7fea3dc193a3cf1d34708e3a8d451649abe4c09c458c",
+      "checkpoint-50pct.pt": "c9d9cfd9be4a5041a2df29ecd946d7a0ede3da8d7328c267613cd8911d729820",
+      "checkpoint-75pct.pt": "4d276158ea7d6566e558000b379642af00c8d05438805b577a10d924d8b3201e",
+      "checkpoint-95pct.pt": "ba71a0eddcfaaf801a7204dfa58098473eb82fc4891d617aaedc0d37e5f4b10f",
+      "checkpoint-best.pt": "7746f789384ba6349b2798d8959583e9e66aa06cb2e5231c9602d401ada8111d",
+      "checkpoint-last.pt": "58d1996b6183844230a23102a0808e761cdb017c05490ded7de00b594ffdb4ea"
+    }
+  },
+  "selection": {
+    "guidance": 5.0,
+    "nfe": 15,
+    "cmmd": 0.5640983581542969,
+    "hpsv2": 0.19648313522338867,
+    "clip_score": 0.24659523367881775,
+    "percentiles": {
+      "cmmd": 0.9285714285714286,
+      "hpsv2": 0.7142857142857143,
+      "clip_score": 0.8571428571428572
+    },
+    "selection_score": 0.8333333333333334,
+    "selection_split": "validation",
+    "candidate_count": 15,
+    "checkpoint": "runs/final/hemera-nano/checkpoint-best.pt",
+    "checkpoint_sha256": "7746f789384ba6349b2798d8959583e9e66aa06cb2e5231c9602d401ada8111d"
+  },
+  "test": {
+    "samples": 4190,
+    "cmmd": 0.5540847778320312,
+    "fid": 21.83976936340332,
+    "precision": 0.7284009456634521,
+    "recall": 0.20620524883270264,
+    "semantic_frechet": 0.1337031378448459,
+    "clip_score_mean": 0.2515803873538971,
+    "clip_score_std": 0.0366448238492012,
+    "siglip_alignment_mean": 0.12078222632408142,
+    "siglip_alignment_std": 0.03615250810980797,
+    "hpsv2_mean": 0.19745253026485443,
+    "hpsv2_std": 0.031689826399087906,
+    "per_source": {
+      "diffusiondb": {
+        "samples": 2335,
+        "cmmd": 0.5064010620117188,
+        "precision": 0.786295473575592,
+        "recall": 0.29807281494140625,
+        "clip_score_mean": 0.250049352645874,
+        "siglip_alignment_mean": 0.11979120224714279,
+        "hpsv2_mean": 0.2025165855884552
+      },
+      "safe-commons": {
+        "samples": 1855,
+        "cmmd": 1.0014772415161133,
+        "precision": 0.663611888885498,
+        "recall": 0.09703504294157028,
+        "clip_score_mean": 0.253507524728775,
+        "siglip_alignment_mean": 0.12202968448400497,
+        "hpsv2_mean": 0.19107812643051147
+      }
+    }
+  },
+  "memorization": {
+    "clip": {
+      "model_id": "openai/clip-vit-large-patch14-336",
+      "generated_samples": 4190,
+      "training_samples": 50000,
+      "maximum_similarity": 0.959966778755188,
+      "mean_nearest_similarity": 0.8246703147888184,
+      "quantiles": {
+        "0.5": 0.8240631818771362,
+        "0.9": 0.8889719247817993,
+        "0.95": 0.9078841209411621,
+        "0.99": 0.9344828128814697
+      }
+    },
+    "dinov2": {
+      "model_id": "facebook/dinov2-small",
+      "generated_samples": 4190,
+      "training_samples": 50000,
+      "maximum_similarity": 0.9288090467453003,
+      "mean_nearest_similarity": 0.6344245076179504,
+      "quantiles": {
+        "0.5": 0.6324065923690796,
+        "0.9": 0.789000391960144,
+        "0.95": 0.8197329640388489,
+        "0.99": 0.8655017614364624
+      }
+    }
+  },
+  "protocols": {
+    "test": {
+      "audit_manifest": "/workspace/hemera/data/manifests/photonyx.jsonl",
+      "audit_manifest_sha256": "7d4fa4f570640747d957876a52b307bfd3aab460477bd74099c65a55d32692cf",
+      "checkpoint": "/workspace/hemera/runs/final/hemera-nano/checkpoint-best.pt",
+      "checkpoint_sha256": "7746f789384ba6349b2798d8959583e9e66aa06cb2e5231c9602d401ada8111d",
+      "split": "test",
+      "requested_samples": 5000,
+      "realized_samples": 4190,
+      "selected_ids_sha256": "e6ebdccddce6a5573c670e279f7e211ac91754fb6e1f319b02bab3f95755946b",
+      "nfe": 15,
+      "guidance": 5.0,
+      "seed": 1234,
+      "batch_size": 64,
+      "dtype": "bfloat16",
+      "materialize_workers": 16,
+      "pair_manifest": "/workspace/hemera/runs/final/test/pairs.jsonl",
+      "pair_manifest_sha256": "5ac84db2f83d77c7460859ead34ceba8fdc2b18688347c4568cd14ee9f4ef319"
+    },
+    "human_study": {
+      "prompt_file": "/workspace/hemera/evaluation/prompts/human-study-v1.jsonl",
+      "prompt_file_sha256": "217b1bcccf5c6493609c5b3856265b93d3b5c6c93961a614b036e1abc59c81af",
+      "prompts": 200,
+      "generations_per_prompt": 1,
+      "images": 200,
+      "seed": 240200,
+      "nfe": 15,
+      "guidance": 5.0,
+      "batch_size": 64,
+      "geneval_layout": false,
+      "manifest": "/workspace/hemera/runs/final/human-study/generations.jsonl",
+      "manifest_sha256": "07ff56ad38ae04cdf5ce9d2f76c44cbd734ccff69414d97b9973492756b9a923"
+    },
+    "safety_bias": {
+      "prompt_file": "/workspace/hemera/evaluation/prompts/safety-bias-v1.jsonl",
+      "prompt_file_sha256": "ed41caefa5b35d800744eab53fa4b2c8b6e550ff93a9ee87309b037df5a8b6f7",
+      "prompts": 100,
+      "generations_per_prompt": 4,
+      "images": 400,
+      "seed": 240300,
+      "nfe": 15,
+      "guidance": 5.0,
+      "batch_size": 64,
+      "geneval_layout": false,
+      "manifest": "/workspace/hemera/runs/final/safety-bias/generations.jsonl",
+      "manifest_sha256": "fde5320d45bc64b2568823480c97556efda58711f01881f42a1461024b64cf26"
+    },
+    "geneval": {
+      "prompt_file": "/workspace/geneval-official/prompts/evaluation_metadata.jsonl",
+      "prompt_file_sha256": "5c48e0813e812e3c373fa5c8ed07a8f0a483be30272b4427b0559c8048e67c13",
+      "prompts": 553,
+      "generations_per_prompt": 4,
+      "images": 2212,
+      "seed": 240113,
+      "nfe": 15,
+      "guidance": 5.0,
+      "batch_size": 64,
+      "geneval_layout": true,
+      "manifest": "/workspace/hemera/runs/final/geneval/generations/generations.jsonl",
+      "manifest_sha256": "365146f119ecf86e673a540e9fa6e756efef9649dc51f8299f9624c37c877f72"
+    }
+  },
+  "confirmation": {
+    "candidate_metrics": [
+      "runs/confirmatory/finalist-a-seed-101/image-eval/metrics.json",
+      "runs/confirmatory/finalist-a-seed-202/image-eval/metrics.json",
+      "runs/confirmatory/finalist-a-seed-303/image-eval/metrics.json"
+    ],
+    "baseline_metrics": [
+      "runs/confirmatory/finalist-b-seed-101/image-eval/metrics.json",
+      "runs/confirmatory/finalist-b-seed-202/image-eval/metrics.json",
+      "runs/confirmatory/finalist-b-seed-303/image-eval/metrics.json"
+    ],
+    "seeds": 3,
+    "paired_prompts": 256,
+    "bootstrap_unit": "prompt cluster containing all seeds",
+    "bootstrap_samples": 2000,
+    "seed": 20260726,
+    "observed": {
+      "cmmd_improvement": 0.01811981201171875,
+      "hpsv2_improvement": 0.00099945068359375,
+      "clip_improvement": 0.0007489988929592073,
+      "relative_composite_improvement": 0.007451094686985016
+    },
+    "per_seed_observed": [
+      {
+        "cmmd_improvement": 0.03993511199951172,
+        "hpsv2_improvement": 0.0008780956268310547,
+        "clip_improvement": 0.0008428047876805067,
+        "relative_composite_improvement": 0.012123518623411655
+      },
+      {
+        "cmmd_improvement": 0.02372264862060547,
+        "hpsv2_improvement": 0.0013508796691894531,
+        "clip_improvement": 0.0011119431583210826,
+        "relative_composite_improvement": 0.010100807063281536
+      },
+      {
+        "cmmd_improvement": -0.010967254638671875,
+        "hpsv2_improvement": 0.0007693767547607422,
+        "clip_improvement": 0.00029224855825304985,
+        "relative_composite_improvement": -0.00029807735700160265
+      }
+    ],
+    "confidence_intervals_95": {
+      "cmmd_improvement": [
+        -0.0021457672119140625,
+        0.03731250762939453
+      ],
+      "hpsv2_improvement": [
+        0.0003818670811597258,
+        0.001604318618774414
+      ],
+      "clip_improvement": [
+        -0.0004973412724211812,
+        0.001966578420251608
+      ],
+      "relative_composite_improvement": [
+        0.0021047957707196474,
+        0.01222033891826868
+      ]
+    },
+    "candidate_beats_baseline_in_every_seed": false,
+    "aggregate_positive_at_95_confidence": true,
+    "confirmation_gate_passed": false
+  },
+  "rankings": {
+    "representation": {
+      "winner": "representation-dc-clip",
+      "winner_score": 1.0,
+      "candidates": 4
+    },
+    "objective": {
+      "winner": "rectified-flow",
+      "winner_score": 1.0,
+      "candidates": 3
+    },
+    "conditioning": {
+      "winner": "pooled-adaln",
+      "winner_score": 1.0,
+      "candidates": 3
+    },
+    "backbone": {
+      "winner": "standard-dit",
+      "winner_score": 1.0,
+      "candidates": 6
+    },
+    "efficiency": {
+      "winner": "dense-control",
+      "winner_score": 0.9166666666666666,
+      "candidates": 5
+    },
+    "data_sampling": {
+      "winner": "source-temperature-05",
+      "winner_score": 1.0,
+      "candidates": 2
+    },
+    "decision_sprint": {
+      "winner": "size-48m",
+      "winner_score": 0.9333333333333332,
+      "candidates": 6
+    }
+  },
+  "cost": {
+    "training_ledger_eur": 20.254837490009184,
+    "complete_final_instance_wall_estimate_eur": 23.04681656260252,
+    "total_logged_project_wall_estimate_eur": 33.732312202137045,
+    "components": {
+      "exploratory": {
+        "phase": "exploratory",
+        "started_at": 1785084680,
+        "finished_at": 1785187354.3781402,
+        "elapsed_seconds": 102674.3781375885,
+        "hourly_eur": 0.348576158,
+        "estimated_eur": 9.941622293399943,
+        "cap_eur": 10.0
+      },
+      "decision_sprint": {
+        "phase": "decision-sprint",
+        "started_at": 1785188472,
+        "finished_at": 1785196154.5221279,
+        "elapsed_seconds": 7682.522125005722,
+        "hourly_eur": 0.348576158,
+        "estimated_eur": 0.7438733461345807,
+        "cap_eur": 1.5
+      },
+      "final_instance": {
+        "phase": "final",
+        "started_at": 1785240119,
+        "finished_at": 1785409269.9472623,
+        "elapsed_seconds": 169150.94724845886,
+        "hourly_eur": 0.4905,
+        "estimated_eur": 23.04681656260252,
+        "cap_eur": 27.93
+      }
+    },
+    "note": "Wall-clock estimates are derived from recorded hourly rates and may differ from the provider invoice, especially across stopped periods."
+  },
+  "pre_registered_success": {
+    "passed": false,
+    "reasons": [
+      "confirmation candidate did not win in every seed",
+      "blinded human preference ratings are pending",
+      "official GenEval detector scoring is pending"
+    ],
+    "checkpoint_reload_and_automated_suite_passed": true
+  }
+}

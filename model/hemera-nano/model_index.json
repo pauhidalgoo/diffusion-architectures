@@ -1,0 +1,6 @@
+{
+  "_class_name": "HemeraPipeline",
+  "name": "Hemera-Nano",
+  "backbone": "dit",
+  "objective": "flow"
+}

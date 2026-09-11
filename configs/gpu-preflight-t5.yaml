@@ -1,0 +1,23 @@
+extends: representations/sd-t5.yaml
+name: hemera-gpu-t5-preflight
+data:
+  cache_dir: preflight-sd-t5/cache
+train:
+  output_dir: preflight/gpu-t5-overfit
+  seed: 31417
+  steps: 100
+  batch_size: 128
+  effective_batch_size: 256
+  learning_rate: 0.0005
+  warmup_ratio: 0.05
+  compile: false
+  ema_half_life_images: 4096
+  log_every: 10
+  sample_every: 0
+  save_every: 100
+  device: cuda
+  dataset_mode: shards
+budget:
+  max_eur: 0.05
+  hourly_eur: 0.348576158
+  reserve_minutes: 2

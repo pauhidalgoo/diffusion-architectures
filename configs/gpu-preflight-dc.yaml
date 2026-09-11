@@ -1,0 +1,23 @@
+extends: representations/dc-clip.yaml
+name: hemera-gpu-dc-ae-preflight
+data:
+  cache_dir: preflight-dc-clip/cache
+train:
+  output_dir: preflight/gpu-dc-overfit
+  seed: 31416
+  steps: 100
+  batch_size: 128
+  effective_batch_size: 256
+  learning_rate: 0.0005
+  warmup_ratio: 0.05
+  compile: false
+  ema_half_life_images: 4096
+  log_every: 10
+  sample_every: 0
+  save_every: 100
+  device: cuda
+  dataset_mode: shards
+budget:
+  max_eur: 0.05
+  hourly_eur: 0.348576158
+  reserve_minutes: 2

@@ -1,0 +1,12 @@
+base: ../experiment-base.yaml
+output_dir: runs/exploratory/data-sampling
+max_eur: 0.18
+runs:
+  - name: raw-source-proportions
+    overrides:
+      data:
+        source_temperature: 1.0
+  - name: source-temperature-05
+    overrides:
+      data:
+        source_temperature: 0.5

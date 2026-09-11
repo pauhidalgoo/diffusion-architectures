@@ -1,0 +1,47 @@
+name: hemera-smoke
+data:
+  image_size: 64
+  synthetic_items: 32
+  latent_channels: 4
+  latent_size: 8
+  text_length: 8
+  text_dim: 32
+representation:
+  text_encoder_type: mock
+  max_text_length: 8
+model:
+  backbone: dit
+  in_channels: 4
+  hidden_size: 32
+  depth: 4
+  heads: 4
+  patch_size: 2
+  mlp_ratio: 2.0
+  text_dim: 32
+  text_length: 8
+  conditioning: pooled
+  max_parameters: 50000000
+objective:
+  name: flow
+train:
+  output_dir: runs/smoke
+  seed: 42
+  steps: 40
+  batch_size: 8
+  effective_batch_size: 8
+  learning_rate: 0.001
+  warmup_ratio: 0.05
+  precision: float32
+  ema_half_life_images: 128
+  cfg_dropout: 0.1
+  log_every: 1
+  save_every: 20
+  device: cpu
+  dataset_mode: synthetic
+budget:
+  max_eur: 0
+eval:
+  samples: 8
+  batch_size: 4
+  num_inference_steps: 4
+  guidance_scale: 1.0

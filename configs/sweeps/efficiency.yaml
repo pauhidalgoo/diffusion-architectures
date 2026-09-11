@@ -1,0 +1,46 @@
+base: ../experiment-base.yaml
+output_dir: runs/exploratory/efficiency
+max_eur: 0.75
+runs:
+- name: dense-control
+  overrides:
+    model:
+      efficiency: dense
+    train:
+      batch_size: 384
+      effective_batch_size: 768
+- name: microdit-mask-50
+  overrides:
+    model:
+      efficiency: microdit
+      hidden_size: 344
+      mask_ratio: 0.5
+      mask_finish_ratio: 0.1
+    train:
+      batch_size: 768
+      effective_batch_size: 768
+- name: tread
+  overrides:
+    model:
+      efficiency: tread
+    train:
+      batch_size: 384
+      effective_batch_size: 768
+- name: repa
+  overrides:
+    model:
+      efficiency: repa
+      repa_dim: 384
+    train:
+      batch_size: 384
+      effective_batch_size: 768
+- name: expert-choice-moe
+  overrides:
+    model:
+      efficiency: moe
+      ffn: moe
+      hidden_size: 280
+      num_experts: 4
+    train:
+      batch_size: 768
+      effective_batch_size: 768

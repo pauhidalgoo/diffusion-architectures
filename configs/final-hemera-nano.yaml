@@ -1,0 +1,79 @@
+name: hemera-nano-final
+data:
+  dataset_id: pauhidalgoo/photonyx
+  dataset_revision: 35978bff3d6f38f4e432c25506168aaf8bd7e26f
+  image_size: 256
+  cache_dir: data/final-cache
+  manifest_dir: data/manifests
+  shard_size: 4096
+  latent_channels: 32
+  latent_size: 8
+  text_length: 77
+  text_dim: 512
+  source_temperature: 0.5
+representation:
+  vae_id: dc-ai/dc-ae-lite-f32c32-diffusers
+  vae_type: dc
+  text_encoder_id: openai/clip-vit-base-patch32
+  text_encoder_type: clip
+  precompute_dtype: float16
+  max_text_length: 77
+  precompute_repa: false
+model:
+  # Frozen after the corrected confirmation and July 2026 decision sprint.
+  # This recipe has 29,756,564 trainable parameters.
+  backbone: dit
+  in_channels: 32
+  hidden_size: 360
+  depth: 12
+  heads: 8
+  patch_size: 1
+  mlp_ratio: 4.0
+  text_dim: 512
+  text_length: 77
+  conditioning: pooled
+  ffn: swiglu
+  attention: full
+  efficiency: dense
+  max_parameters: 50000000
+objective:
+  name: flow
+train:
+  output_dir: runs/final/hemera-nano
+  seed: 2026
+  steps: 10000000
+  # Exact winning recipe from the RTX 5090 batch profile.
+  batch_size: 384
+  effective_batch_size: 768
+  learning_rate: 0.0002
+  warmup_ratio: 0.02
+  weight_decay: 0.01
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  precision: bfloat16
+  # RTX 5090 end-to-end profiling found compilation slower for the current
+  # shapes; only change this if the frozen winning recipe is reprofiled.
+  compile: false
+  ema_half_life_images: 100000
+  cfg_dropout: 0.1
+  log_every: 10
+  sample_every: 2500
+  save_every: 2500
+  device: auto
+  dataset_mode: shards
+budget:
+  # $0.55861991/hour at the 2026-07-28 ECB reference
+  # (1 EUR = 1.1389 USD). The €23.54 phase cap represents 48 total hours;
+  # training gets €20.50 and leaves about six paid hours for preprocessing,
+  # locked validation/test evaluation, export, and local archival.
+  max_eur: 20.5
+  hourly_eur: 0.4905
+  reserve_minutes: 30
+  save_milestones: true
+eval:
+  samples: 5000
+  batch_size: 64
+  num_inference_steps: 30
+  guidance_scale: 3.0
+  cmmd_bandwidth: 10.0

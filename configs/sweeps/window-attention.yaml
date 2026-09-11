@@ -1,0 +1,8 @@
+base: ../experiment-base.yaml
+output_dir: runs/exploratory/window-attention
+max_eur: 0.2
+runs:
+  - name: sliding-window
+    overrides:
+      model:
+        attention: window

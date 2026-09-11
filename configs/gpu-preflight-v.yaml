@@ -1,0 +1,9 @@
+extends: gpu-preflight.yaml
+name: hemera-gpu-v-real-data-preflight
+objective:
+  name: v
+  train_timesteps: 1000
+train:
+  output_dir: preflight/gpu-v-overfit
+  steps: 100
+  save_every: 100

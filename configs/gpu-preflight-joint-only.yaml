@@ -1,0 +1,20 @@
+extends: gpu-preflight.yaml
+name: hemera-joint-attention-only-gpu-preflight
+model:
+  backbone: pixart
+  conditioning: joint
+  hidden_size: 360
+train:
+  output_dir: preflight/gpu-joint-only-overfit
+  seed: 31420
+  steps: 120
+  batch_size: 64
+  effective_batch_size: 256
+  learning_rate: 0.0005
+  ema_half_life_images: 4096
+  log_every: 10
+  save_every: 120
+budget:
+  max_eur: 0.04
+  hourly_eur: 0.348576158
+  reserve_minutes: 1

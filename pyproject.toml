@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hemera-nano"
+version = "1.0.0"
+description = "Micro-budget text-to-image research framework and Hemera-Nano inference pipeline"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Pau Hidalgoo"}]
+dependencies = [
+  "torch>=2.5",
+  "PyYAML>=6.0",
+  "numpy>=1.26",
+  "Pillow>=10.0",
+  "accelerate>=1.0,<2",
+  "diffusers>=0.32,<0.39",
+  "transformers>=4.46,<5",
+  "safetensors>=0.4,<1",
+  "huggingface-hub>=0.27,<1",
+]
+
+[project.urls]
+Repository = "https://github.com/pauhidalgoo/diffusion-architectures"
+Model = "https://huggingface.co/pauhidalgoo/hemera-nano"
+Dataset = "https://huggingface.co/datasets/pauhidalgoo/photonyx"
+
+[project.scripts]
+hemera = "hemera.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["hemera*"]
