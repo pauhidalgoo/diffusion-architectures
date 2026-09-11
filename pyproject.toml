@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/pauhidalgoo/diffusion-architectures"
+Repository = "https://github.com/pauhidalgoo/diffusion-hemera"
 Model = "https://huggingface.co/pauhidalgoo/hemera-nano"
 Dataset = "https://huggingface.co/datasets/pauhidalgoo/photonyx"
 

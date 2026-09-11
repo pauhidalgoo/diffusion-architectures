@@ -70,7 +70,7 @@ The denoiser, VAE, and text encoder are downloaded and cached automatically on
 first use.
 
 ```bash
-pip install "git+https://github.com/pauhidalgoo/diffusion-architectures.git@v1.0.0"
+pip install "git+https://github.com/pauhidalgoo/diffusion-hemera.git@v1.0.0"
 ```
 
 ```python
