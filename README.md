@@ -24,7 +24,7 @@ Hemera-Nano denoiser from Hugging Face plus the frozen CLIP text encoder and
 DC-AE decoder; subsequent runs use the local Hugging Face cache.
 
 ```bash
-pip install "git+https://github.com/pauhidalgoo/diffusion-architectures.git"
+pip install "git+https://github.com/pauhidalgoo/diffusion-architectures.git@v1.0.0"
 ```
 
 ```python
