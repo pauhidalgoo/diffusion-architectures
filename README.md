@@ -17,6 +17,9 @@ quality claim. Every image, prompt, negative prompt, seed, CFG value, NFE, hash,
 and selection note is preserved in the [full showcase](assets/showcase/README.md)
 and [machine-readable manifest](assets/showcase/showcase.jsonl).
 
+> AI coding assistance was used in this repo. Hemera was a personal project that had been shelved for some time. Recent advancements in AI coding tools made it possible to pick it back up and bring it to its current state. Development was assisted by ChatGPT Sol 5.6 / Codex.
+
+ 
 ## Generate an image in a few lines
 
 Install Hemera directly from GitHub. The first run downloads the 114 MiB
@@ -155,6 +158,10 @@ All **117 tests** pass, including tiny-model forward/backward, CFG, sampling,
 masking, routing, atomic checkpointing, deterministic resume, export/reload,
 showcase packaging, and synthetic overfitting. Exact cloud commands and budget
 guards live under `scripts/cloud/`.
+
+## The name
+
+**Hemera** takes its name from the Greek goddess of the day. In mythology, she disperses the dark mists of Nyx (the night) to reveal the daylight, a parallel to diffusion models gradually resolving image signal out of random noise. Depending on the tradition, she is also described as the daughter of Chronos (time, mirroring diffusion timesteps) or Chaos.
 
 ## Licensing and attribution
 
